@@ -1,0 +1,108 @@
+HTML 代码如下
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+  <title>张超建筑摄影工作室</title>
+</head>
+
+<body>
+  <header>
+    <h1>张超建筑摄影工作室</h1>
+    <nav>
+      <ul>
+        <li><a href="#">NEW</a></li>
+        <li><a href="#">Culture & Public</a></li>
+        <li><a href="#">Retail/Hotel</a></li>
+        <li><a href="#">Commercial & Headquarters</a></li>
+        <li><a href="#">Landscape</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Exhibition</a></li>
+        <li><a href="#">Villages in the city</a></li>
+        <li><a href="#">Residential</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">About Studio</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="image-grid">
+      <!-- 图片项示例，你需要替换成实际图片地址和标题 -->
+      <div class="image-item">
+        <img src="https://example.com/image1.jpg" alt="万科设计 | 大塘旗舰店">
+        <p>万科设计 | 大塘旗舰店</p>
+      </div>
+      <div class="image-item">
+        <img src="https://example.com/image2.jpg" alt="E Studio | 博高星总部">
+        <p>E Studio | 博高星总部</p>
+      </div>
+      <div class="image-item">
+        <img src="https://example.com/image3.jpg" alt="量外建筑 | MKTR PARK">
+        <p>量外建筑 | MKTR PARK</p>
+      </div>
+      <div class="image-item">
+        <img src="https://example.com/video.jpg" alt="video">
+        <p>video</p>
+      </div>
+      <!-- 更多图片项依此类推 -->
+    </div>
+  </main>
+</body>
+
+</html>
+
+
+
+CSS 代码（styles.css）如下
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}

@@ -9,30 +9,18 @@ const noiseBackground = 'url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.
 
 export const styles = {
   photographTheme: {
-    padding: '20px',
-    maxWidth: '1400px',
-    margin: '0 auto',
-    backgroundColor: 'var(--BACKGROUND)',
-    color: 'var(--TEXT)',
-    position: 'relative',
-    '::before': {
-      content: '""',
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      width: '100%',
-      height: '100%',
-      backgroundImage: noiseBackground,
-      pointerEvents: 'none',
-      zIndex: '-1',
+    '.image-grid': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gap: '30px'
     },
-    '@media (max-width: 992px)': {
-      maxWidth: '90%',
-    },
-    '@media (max-width: 768px)': {
-      maxWidth: '100%',
-      padding: '10px',
-    },
+    'nav': {
+      gap: '25px',
+      borderBottom: '1px solid var(--BORDER)',
+      'a:hover': {
+        color: 'var(--PRIMARY)'
+      }
+    }
   }
 }
 

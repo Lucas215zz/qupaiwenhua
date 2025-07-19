@@ -9,7 +9,7 @@ import { cx } from '@/lib/utils'
  * @param {Object} props.post - 从 Notion 获取的文章数据
  * @returns {JSX.Element} - 渲染后的摄影主题页面
  */
-const PhotographTheme = ({ post }) => {
+const LayoutIndex = ({ post }) => {
   return (
     <div className={cx(styles.photographTheme, 'animate')}>
       <NotionContent post={post} />
@@ -44,5 +44,5 @@ addAnimationStyle();
 
 export {
   CONFIG,
-  PhotographTheme
+  LayoutIndex
 }
