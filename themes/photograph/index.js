@@ -11,11 +11,36 @@ import { cx } from '@/lib/utils'
  */
 const PhotographTheme = ({ post }) => {
   return (
-    <div className={cx(styles.photographTheme)}>
+    <div className={cx(styles.photographTheme, 'animate')}>
       <NotionContent post={post} />
     </div>
   )
 }
+
+/**
+ * 添加动画样式
+ */
+const addAnimationStyle = () => {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
+addAnimationStyle();
 
 export {
   CONFIG,
