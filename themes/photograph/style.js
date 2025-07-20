@@ -4,23 +4,18 @@
  * 此处不支持tailwindCSS的 @apply 语法
  * @returns
  */
-/* ===== NOISE BACKGROUND ===== */
-const noiseBackground = 'url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.1"></rect></svg>")';
-
 export const styles = {
   photographTheme: {
-    '.image-grid': {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-      gap: '30px'
+    padding: '20px',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    '@media (max-width: 1023px)': {
+      maxWidth: '900px',
     },
-    'nav': {
-      gap: '25px',
-      borderBottom: '1px solid var(--BORDER)',
-      'a:hover': {
-        color: 'var(--PRIMARY)'
-      }
-    }
+    '@media (max-width: 639px)': {
+      maxWidth: '100%',
+      padding: '10px',
+    },
   }
 }
 

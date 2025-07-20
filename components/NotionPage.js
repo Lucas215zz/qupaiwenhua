@@ -6,13 +6,6 @@ import 'katex/dist/katex.min.css'
 import dynamic from 'next/dynamic'
 import { useEffect, useRef } from 'react'
 import { NotionRenderer } from 'react-notion-x'
-import { Equation } from '@/components/Equation'
-import { Pdf } from '@/components/Pdf'
-import { PrismMac } from '@/components/PrismMac'
-import { AdEmbed } from '@/components/GoogleAdsense'
-import { Collection } from 'react-notion-x/build/third-party/collection'
-import { Modal } from 'react-notion-x/build/third-party/modal'
-import { Tweet } from '@/components/NotionPage'
 
 /**
  * 整个站点的核心组件
