@@ -1,17 +1,15 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Testimonials from './components/Testimonials'
-import Footer from './components/Footer'
+import BannerCarousel from './components/BannerCarousel'
+// 你可以继续添加其它区块组件
 
-function MuzliHome(props) {
+function MuzliHome() {
   return (
-    <div>
+    <div className="font-sans bg-light text-dark antialiased">
       <Navbar />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <Footer />
+      <main>
+        <BannerCarousel />
+        {/* 这里继续插入其它区块组件，如 <Categories /> <FeaturedWorks /> <Designers /> <Trends /> <Subscribe /> <Footer /> */}
+      </main>
     </div>
   )
 }
