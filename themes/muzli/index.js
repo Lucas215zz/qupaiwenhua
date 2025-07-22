@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import FeatureCards from './components/FeatureCards'
+import Features from './components/Features'
+import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 
 function MuzliHome(props) {
@@ -8,14 +9,13 @@ function MuzliHome(props) {
     <div>
       <Navbar />
       <Hero />
-      <FeatureCards />
-      {/* 你可以继续添加用户评价、下载按钮等区块 */}
+      <Features />
+      <Testimonials />
       <Footer />
     </div>
   )
 }
 
-// 兼容主题系统的多种导出
 export default MuzliHome
 export const LayoutBase = MuzliHome
 export const LayoutIndex = MuzliHome
