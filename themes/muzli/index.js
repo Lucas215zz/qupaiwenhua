@@ -7,19 +7,19 @@ import Trends from './components/Trends'
 import Subscribe from './components/Subscribe'
 import Footer from './components/Footer'
 
-function MuzliHome() {
+function MuzliHome(props) {
   return (
     <div className="font-sans bg-light text-dark antialiased">
       <Navbar />
       <main>
-        <BannerCarousel />
-        <Categories />
-        <FeaturedWorks />
-        <Designers />
-        <Trends />
+        <BannerCarousel siteInfo={props.siteInfo} />
+        <Categories categories={props.categoryOptions || []} />
+        <FeaturedWorks posts={props.latestPosts || []} />
+        <Designers designers={props.designers || []} />
+        <Trends posts={props.latestPosts || []} />
         <Subscribe />
       </main>
-      <Footer />
+      <Footer siteInfo={props.siteInfo} />
     </div>
   )
 }

@@ -1,33 +1,4 @@
-export default function FeaturedWorks() {
-  const works = [
-    {
-      img: 'https://picsum.photos/id/1071/800/600',
-      tag: '网页设计', tagColor: 'bg-primary/90',
-      title: '现代电商网站设计方案',
-      desc: '基于用户体验优化的电商平台设计，提升转化率和用户留存率',
-      author: '李明设计',
-      avatar: 'https://picsum.photos/id/1005/100/100',
-      views: '3.2k', likes: 245
-    },
-    {
-      img: 'https://picsum.photos/id/1073/800/600',
-      tag: '移动应用', tagColor: 'bg-secondary/90',
-      title: '金融理财APP界面设计',
-      desc: '简洁直观的金融工具设计，帮助用户轻松管理资产和投资',
-      author: '张晓华',
-      avatar: 'https://picsum.photos/id/1012/100/100',
-      views: '4.7k', likes: 389
-    },
-    {
-      img: 'https://picsum.photos/id/1060/800/600',
-      tag: '品牌设计', tagColor: 'bg-purple-600/90',
-      title: '环保品牌视觉识别系统',
-      desc: '为环保组织打造的完整品牌形象，传递可持续发展理念',
-      author: '王建国',
-      avatar: 'https://picsum.photos/id/1027/100/100',
-      views: '2.8k', likes: 196
-    }
-  ]
+export default function FeaturedWorks({ posts = [] }) {
   return (
     <section id="featured" className="py-20 bg-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,28 +12,28 @@ export default function FeaturedWorks() {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {works.map((w, i) => (
-            <div key={i} className="group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-white hover-lift">
+          {posts.slice(0, 3).map((post, i) => (
+            <div key={post.id || i} className="group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-white hover-lift">
               <div className="relative overflow-hidden">
-                <img src={w.img} alt={w.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={post.pageCover || '/default.jpg'} alt={post.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 text-white text-sm rounded-full ${w.tagColor}`}>{w.tag}</span>
+                  <span className="px-3 py-1 bg-primary/90 text-white text-sm rounded-full">{post.category || '分类'}</span>
                 </div>
                 <button className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <i className="fa fa-heart-o text-gray-600"></i>
                 </button>
               </div>
               <div className="p-6">
-                <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{w.title}</h3>
-                <p className="text-gray-600 mb-5 line-clamp-2">{w.desc}</p>
+                <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
+                <p className="text-gray-600 mb-5 line-clamp-2">{post.summary}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <img src={w.avatar} alt="设计师头像" className="w-10 h-10 rounded-full object-cover" />
-                    <span className="ml-3 text-base font-medium">{w.author}</span>
+                    <img src={post.author?.avatar || '/default-avatar.png'} alt="设计师头像" className="w-10 h-10 rounded-full object-cover" />
+                    <span className="ml-3 text-base font-medium">{post.author?.name || '匿名'}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-500">
-                    <span className="flex items-center mr-4"><i className="fa fa-eye mr-1"></i> {w.views}</span>
-                    <span className="flex items-center"><i className="fa fa-heart mr-1"></i> {w.likes}</span>
+                    <span className="flex items-center mr-4"><i className="fa fa-eye mr-1"></i> {post.views || 0}</span>
+                    <span className="flex items-center"><i className="fa fa-heart mr-1"></i> {post.likes || 0}</span>
                   </div>
                 </div>
               </div>
