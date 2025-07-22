@@ -1,6 +1,11 @@
 import Navbar from './components/Navbar'
 import BannerCarousel from './components/BannerCarousel'
-// 你可以继续添加其它区块组件
+import Categories from './components/Categories'
+import FeaturedWorks from './components/FeaturedWorks'
+import Designers from './components/Designers'
+import Trends from './components/Trends'
+import Subscribe from './components/Subscribe'
+import Footer from './components/Footer'
 
 function MuzliHome() {
   return (
@@ -8,8 +13,13 @@ function MuzliHome() {
       <Navbar />
       <main>
         <BannerCarousel />
-        {/* 这里继续插入其它区块组件，如 <Categories /> <FeaturedWorks /> <Designers /> <Trends /> <Subscribe /> <Footer /> */}
+        <Categories />
+        <FeaturedWorks />
+        <Designers />
+        <Trends />
+        <Subscribe />
       </main>
+      <Footer />
     </div>
   )
 }
