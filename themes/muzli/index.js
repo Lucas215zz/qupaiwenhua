@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import FeatureCards from './components/FeatureCards'
 import Footer from './components/Footer'
 
-export default function MuzliHome() {
+function MuzliHome(props) {
   return (
     <div>
       <Navbar />
@@ -14,3 +14,15 @@ export default function MuzliHome() {
     </div>
   )
 }
+
+// 兼容主题系统的多种导出
+export default MuzliHome
+export const LayoutBase = MuzliHome
+export const LayoutIndex = MuzliHome
+export const LayoutPostList = MuzliHome
+export const LayoutSlug = MuzliHome
+export const Layout404 = MuzliHome
+export const LayoutArchive = MuzliHome
+export const LayoutCategoryIndex = MuzliHome
+export const LayoutTagIndex = MuzliHome
+export const LayoutSearch = MuzliHome
